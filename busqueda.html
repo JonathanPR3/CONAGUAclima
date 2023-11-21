@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./AlaSQL-alasql-07261ea/console/alasql.min.js"></script>
+    <script src="./js/clima.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+</head>
+<body>
+
+  <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="./index.html" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <img src="./imgs/logo.png">
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="./index.html" class="nav-link px-2 text-white">Inicio</a></li>
+          <li><a href="#" class="nav-link px-2 text-secondary">Buscar municipio</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+        </form>
+
+        <div class="text-end">
+          <button type="button" class="btn btn-outline-light me-2">Login</button>
+          <button type="button" class="btn btn-warning">Sign-up</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"></div>
+      <p></p>
+      <h1 class="">Búsqueda por estado y municipio</h1>
+      <h2>Clima a 3 días</h2>
+      </div>
+    </div>
+
+
+
+      <div class="container border-top">
+        
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <label for="estado">Estado:</label>
+           <input class="form-control" type="text" id="estado" placeholder="Introduce un estado..." aria-label="Search">
+        </form>
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+           <label for="municipio">Municipio:</label>
+           <input class="form-control" type="text" id="municipio" placeholder="Introduce un municipio...">
+        </form>
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"></form>
+        <div class="justify-content-center">
+          <p></p>
+              <button id="buscarBtn" class="btn btn-success btn-sm" type="submit">Buscar</button>
+              </div>
+          </form>
+      </div>
+    </div>
+    &nbsp;
+    
+    <div class="container border-top">
+      <div id="resultado"></div>
+      <div id="fechasContainer"></div>   
+    </div>
+    
+
+        
+
+        
+        
+
+        
+        
+  
+</main>
+<script src="./js/index.js"></script>
+    <script>
+      // Asociar evento desde JavaScript
+      document.getElementById('buscarBtn').addEventListener('click', function () {
+          buscarClima();
+      });
+  </script>
+
+    
+        <div class="container">
+          <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+              <p class="col-md-4 mb-0 text-muted"> 2023 ESCOM, Clima</p>
+          
+              <a href="#" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <img src="./imgs/logo.png">
+              </a>
+          
+              <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Inicio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Estados</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+              </ul>
+            </footer>
+        </div>
+    
+
+    <script>
+    const climas= alasql('SEARCH DISTINCT(/desciel) FROM ?', [arrClima]);
+    console.log (climas);
+    </script>
+
+</body>
+
+
+</html>
