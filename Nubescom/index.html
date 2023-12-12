@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-  <title>Material blog</title>
+  <title>Búsqueda</title>
 
   <!-- CSS  -->
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -13,12 +13,26 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="shortcut icon" href="./imgs/imgsWeb/IMG 11.png" type="image/png">
   <link rel="icon" href="./imgs/imgsWeb/IMG 11.png" type="image/png">
+
   <script src="./js/jquery-3.7.1.min.js"></script>
   <script src="./js/index.js"></script>
   <script src="./js/jsonClima.js"></script>
+  <style>
+    /* Estilo para el fondo del h1 */
+    .header {
+      background-color: #2AA0D2; /* Puedes cambiar este color al que prefieras */
+      display: inline-block;
+      padding: 10px 20px; /* Ajusta según tus necesidades */
+      border-radius: 5px; /* Añade esquinas redondeadas si lo deseas */
+    }
+
+    /* Estilo para el texto del h1 */
+    .header-text {
+      margin: 0; /* Elimina el margen predeterminado del h1 */
+      color: #ffffff; /* Puedes cambiar este color al que prefieras */
+    }
+  </style>
 </head>
-
-
 
 <body>
   <div id="navbar" class="navbar-fixed scrollspy">
@@ -32,17 +46,17 @@
         <ul class="right hide-on-med-and-down">
         
           <li><a href="index.html">Búsqueda</a></li>
-          <li><a href="aboutUs.html">Estados</a></li>
+          <li><a href="aboutUs.html">Búsqueda General</a></li>
           <li><a href="samplePost.html">Noticias</a></li>
-          <li><a href="contactUs.html">Información</a></li>
+          <li><a href="contactUs.html">¿Quiénes somos?</a></li>
         
         
         </ul>
           <ul class="right side-nav" id="mobile-demo">
             <li><a href="index.html">Búsqueda</a></li>
-          <li><a href="aboutUs.html">About Us</a></li>
-          <li><a href="samplePost.html">Sample post</a></li>
-          <li><a href="contactUs.html">Contact Us</a></li>
+            <li><a href="aboutUs.html">Búsqueda General</a></li>
+            <li><a href="samplePost.html">Sample post</a></li>
+          <li><a href="contactUs.html">¿Quiénes somos?</a></li>
           
         </ul>
       </div>
@@ -53,21 +67,27 @@
       <div class="section no-pad-bot">
         <div class="container valign">
           <br><br>
-          <h1 class="header center black-text text-darken-4">Búsqueda de clima por estado y municipio</h1>
           <div class="row center">
-            <h3 class="header col s12 black-text text-darken-4">Datos fuente: CONAGUA</h3>
+            <h1 class="header center black-text text-darken-4">
+              <span class="header-text">Búsqueda de clima por estado y municipio</span>
+            </h1>
+          </div>
+
+          <div class="row center">
+            <h3 class="col s12 black-text text-darken-4">Desarrollado por:</h3>
           </div>
           <div class="row center">
-            <a href="#startPosts" class="btn-floating btn-large waves-effect waves-light grey darken-2 head-link"><i class="fa fa-angle-double-down"></i></a>
+            <a href="#startPosts" class="btn-floating btn-large waves-effect waves-light light-blue head-link"><i class="fa fa-angle-double-down"></i></a>
           </div>
           <br><br>
         </div>
       </div>
-      <div class="parallax"><img src="./images/wallpaperflare.com_wallpaper.jpg" alt="background img 2"></div>
+      <div class="parallax"><img src="./images/banner.png" alt="background img 2"></div>
   </div>
 
 	<div class="container">
 		<div class="col s12 m10 offset-m1 l9 offset-l1">
+      <br>
 			<p class="text-black darken-4">Los datos son obtenidos directamente desde el servicio "PronosticoPorMunicipiosGZ" proporcionado por la CONAGUA.</p>
 			<p  class="text-black darken-4">Este 'Web Service' (Servicio Web) ofrece la posibilidad de consumir los datos del pronóstico por municipios por día y a 3 días, en formato json, con la información actualizada cada hora 15 minutos.
           El servicio puede consumirse desde la <a style="color:#26a69a;" href="https://smn.conagua.gob.mx/es/web-service-api" target="_blank"><strong>página oficial de la CONAGUA</strong></a>.
@@ -77,8 +97,8 @@
 
   <div class="container" id="startPosts">
     <br><br>
-      <h1 class="center">Clima a 3 días</h1>
-      <h2 class="center">Búsqueda por estado y municipio</h2>
+      <h3 class="center">Clima a 3 días</h1>
+      <h5 class="center">Búsqueda por estado y municipio</h2>
     <form>
       <div class="input-field" style="position: relative;">
         <input id="municipio" type="text"  onkeyup="realizarBusqueda()">
@@ -93,77 +113,72 @@
         <div id="searchResults"></div>
       </div>
     </form>
-    <h5 class="center">***Haz click para ver mas detalles***</h5>
+    <h5 class="center">***Haz click para ver mas detalles*** <i class="fa-regular fa-hand-pointer"></i></h5>
   </div>
 
-<div class="" id="dias" style="margin-bottom: 10px; margin-top: 10px;  margin-left: 70px; margin-right: 70px;">
+<div class="" id="dias" style="margin-bottom: 10px; margin-top: 2px;  margin-left: 65px; margin-right: 65px;">
   <div class="col s-12 m-6">
   </div>
   <div class="col s-12 m-6">
   </div>
 </div>
 
-  <footer class="page-footer grey darken-4">
-    <div class="container">
-            <div class="row">
-              <div class="col s12 l4 m10">
-                <h5 class="white-text">Desarrollado en ESCOM</h5>
-                <p class="white-text">Grupo 4CV3 - TDAW</p>
-
-			     <form>
-			      <div class="input-field">
-			        <i class="mdi-communication-email prefix"></i>
-			        <input id="icon_prefix" type="email" class="validate">
-			        <label for="icon_prefix">Email</label>
-			      </div>
-			     </form>
-			    
-			    <a class="waves-effect waves-light btn">Sign Up
-              <i class="fa fa-sign-in right"></i>
-          </a>
-  </div><!--col-->
-                      
-  <div id="Integrantes" class="col l3 offset-l1 s12 m8">
-    <h5 class="white-text">Integrantes:</h5>
-    <ul>
-      <li><a class="grey-text text-lighten-3" >Peña Jonathan</a></li>
-      <li><a class="grey-text text-lighten-3" >Category2</a></li>
-      <li><a class="grey-text text-lighten-3" >Category3</a></li>
-    </ul>
-  </div><!--col-->
-              
-              
-              
-              <div class="col l3 s12 m8">
-                <h5 class="white-text">Archives</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">March 2015</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">April 2015</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">May 2015</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">June 2015</a></li>
-                </ul>
-              </div><!--col-->
-              
-            </div><!--row-->
+<footer class="page-footer grey darken-4">
+  <div class="container">
+          <div class="row">
+            <div class="col s12 l4 m10">
+              <h5 class="white-text">Desarrollado en ESCOM</h5>
+              <p class="white-text">Grupo 4CV3 - TDAW</p>
+         <form>
+        
+          <div class="input-field">
+            <i class="mdi-communication-email prefix"></i>
+            <input id="icon_prefix" type="email" class="validate">
+            <label for="icon_prefix">Email</label>
+          </div>
+         
+         </form>
+        
+        <a class="waves-effect waves-light btn">Contáctanos
+                  <i class="fa fa-sign-in right"></i></a>
+     </div><!--col-->
             
-            <div class="row">
-            	<div class="col s12 l3 offset-l5">
-            		
-            	
-            	<a href="#"><i style="font-size: 38px;" class="fa fa-facebook-square"></i></a> &nbsp;&nbsp;&nbsp;
-            	<a href="#"><i style="font-size: 38px;" class="fa fa-twitter-square"></i></a>&nbsp;&nbsp;&nbsp;
-            	<a href="#"><i style="font-size: 38px;" class="fa fa-google-plus-square"></i></a>
-            	</div>
-            	
-            </div><!--row-->
-          </div><!--conatiner-->
-    <div class="footer-copyright">
-      <div class="container">
-       <p>Copyright © Your website name</p>
-       <br>
-      </div>
+            
+            <div id="categories" class="col l3 offset-l1 s12 m8">
+              <h5 class="white-text">Consultas</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Búsqueda</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Búsqueda General<a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Noticias</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">¿Quiénes somos?</a></li>
+              </ul>
+            </div><!--col-->
+            
+            
+            
+            <div class="col l3 s12 m8">
+              <h5 class="white-text">Desarrollado por:</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Peña Ramirez Jonathan</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Romero Isaias</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Flores Flores Rodrigo Ernesto</a></li>
+              </ul>
+            </div><!--col-->
+            
+          </div><!--row-->
+          
+          <div class="row">
+            <div class="col s12 l3 offset-l5">
+            </div>            
+          </div><!--row-->
+        </div><!--conatiner-->
+  <div class="footer-copyright">
+    <div class="container">
+     <p>Copyright © NUBESCOM</p>
+     <br>
     </div>
-  </footer>
+  </div>
+</footer>
 
 
   <!--  Scripts-->
@@ -192,11 +207,7 @@
 
   </script>
 
-	
-	
-	
-	
-			 <script>
+	<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -204,11 +215,5 @@
   ga('create', 'UA-60673008-2', 'auto');
   ga('send', 'pageview');
 </script>
-	
-	
-	
-	
-	
-	
   </body>
 </html>

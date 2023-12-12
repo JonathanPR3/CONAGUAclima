@@ -69,18 +69,19 @@ $(document).ready(() => {
                 <div class='col s12 m6 l3'>
                     <div class='card'>
                         <div class="card">
-                            <div class="card-image waves-effect waves-block waves-light">
+                            <div class="card-image waves-effect waves-block waves-light" style=" margin-top:-30px; height: 220px;">
                                 <img class="activator" src='${imagenURL}'>
                             </div>
-                            <div class="card-content">
-                                <span class="card-title activator grey-text text-darken-4"><b class="post-subtitle subTitleFont">${obj.nes}</b> <br><b class="post-subtitle subTitleFont"> ${obj.nmun} </b><i class="fas fa-ellipsis-v right"></i></span>
-                                <p class="post-subtitle subTitleFont"><b><span style="color: blue;">${obj.tmax} °C</span></b> / <span style="color: red;">${obj.tmin} °C</span></p>
-                                <p>${obj.desciel}</p>
+                            <div class="card-content center">
+                                <span class="card-title activator grey-text text-darken-4"><b class="center">${obj.nes}:</b><br>
+                                <p style="font-size:90%;"> ${obj.nmun} </p></span>
                                 <p>${obtenerFormatoFecha(obj.dloc)}</p>
+                                <p class="post-subtitle subTitleFont" style="font-size:110%;"><b><span style="color: red;"><i style="color: red;" class="fa-solid fa-temperature-full"></i>${obj.tmax} °C</span></b> // <span style="color: blue;"><i style="color: blue;" class="fa-solid fa-temperature-quarter"></i>${obj.tmin} °C</span></p>
+                                <p>${obj.desciel}</p>
                             </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Información detallada <i class="fas fa-times right"></i></span>
-                                <p><i class="fas fa-umbrella"></i> Probabilidad de precipitaciones: ${obj.probprec} %</p>
+                            <div class="card-reveal center">
+                                <span class="card-title grey-text text-darken-4"><b style="font-size:80%;">Información detallada:</b> <i class="fas fa-times right"></i></span>
+                                <p><i class="fas fa-umbrella"></i> Probabilidad de lluvia: ${obj.probprec} %</p>
                                 <p><i class="fas fa-wind"></i> Velocidad del viento: <br>${obj.velvien} km/h</p>
                                 <p><i class="fas fa-location-arrow"></i> Dirección del viento: <br>${obtenerDireccionViento(obj.dirvieng)}</p>
                                 <p><i class="fas fa-smog"></i> Cobertura de nubes: <br>${obj.cc} %</p>
