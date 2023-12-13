@@ -12,10 +12,11 @@ $(document).ready(function () {
                 <div class="collapsible-header"><i class="fa-solid fa-square-caret-down"></i><b>${estado}</b></div>
                 <div class="collapsible-body container">
                     <div class="search-container">
+                    <p class="center"><i class="fa-solid fa-magnifying-glass"></i>  <b>Busca un municipio:</b></p>
                         <label for="searchInput">Buscar municipio:</label>
                         <input type="text" class="search-input">
                     </div>
-                    <ul class="collapsible-items">
+                    <ul class="collapsible-items"  >
                         ${crearItemsPorEstado(objClima, estado)}
                     </ul>
                 </div>
@@ -54,6 +55,7 @@ function formatearFecha(fechaString) {
 
 // Función auxiliar para crear items por estado
 // Función auxiliar para crear items por estado
+// Función auxiliar para crear items por estado
 function crearItemsPorEstado(objClima, estado) {
     // Filtra los objetos por estado
     let objetosPorEstado = objClima.filter(obj => obj.nes === estado);
@@ -69,23 +71,30 @@ function crearItemsPorEstado(objClima, estado) {
         if (obj.nmun !== municipioAnterior) {
             if (municipioAnterior !== null) {
                 // Cierra el div del municipio anterior si no es la primera iteración
-                itemsHTML += `</div>`;
+                itemsHTML += `</div></div>`;
             }
 
             // Abre un nuevo div para el municipio actual
-            itemsHTML += `<div class="card">
-                            <h6 class="center"><b>${obj.nmun}</b></h6>
-                            <ul>`;
+            itemsHTML += `<div class="card " >
+                            <h5 class="center" ><b>${obj.nmun}</b></h5>
+                            <div class="row">`;
             municipioAnterior = obj.nmun; // Actualiza el municipio anterior
         }
 
-        itemsHTML += `<li class="center"><b>Fecha: ${fechaFormateada}</b></li>
-                      <li class="center"><i style="color: red;" class="fa-solid fa-temperature-full"></i>Máxima: ${obj.tmax}°C / <i style="color: blue;" class="fa-solid fa-temperature-quarter"></i>Mínima: ${obj.tmin}°C</li>
-                      <li class="center"><i class="fa-solid fa-cloud" style="color: #C6E5D9;"></i>${obj.desciel} / <i class="fas fa-umbrella" style="color: #045071;"></i>Probabilidad de Lluvia: ${obj.probprec}%</li>`;
+        // Estructura la información en 4 columnas por cada fecha
+        itemsHTML += `<div class="col s3" style="margin-left: 0px; margin-right: 0px;">
+                          <ul class="collection">
+                              <li class="collection-item center blue accent-2 white-text"><b>${fechaFormateada}</b></li>
+                              <li class="collection-item center grey lighten-4"><i style="color: red;" class="fa-solid fa-temperature-full"></i>Máxima: ${obj.tmax}°C</li>
+                              <li class="collection-item center grey lighten-4"><i style="color: blue;" class="fa-solid fa-temperature-quarter"></i>Mínima: ${obj.tmin}°C</li>
+                              <li class="collection-item center grey lighten-4"><i class="fa-solid fa-cloud" style="color: #C6E5D9;"></i>${obj.desciel}</li>
+                              <li class="collection-item center grey lighten-4"><i class="fas fa-umbrella" style="color: #045071;"></i>Lluvia:<br> ${obj.probprec}%</li>
+                          </ul>
+                      </div>`;
 
         // Cierra el div del municipio actual en la última iteración
         if (index === objetosPorEstado.length - 1) {
-            itemsHTML += `</ul></div>`;
+            itemsHTML += `</div></div>`;
         }
     });
 

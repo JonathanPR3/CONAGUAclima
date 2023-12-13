@@ -69,7 +69,7 @@ $(document).ready(() => {
                 <div class='col s12 m6 l3'>
                     <div class='card'>
                         <div class="card">
-                            <div class="card-image waves-effect waves-block waves-light" style=" margin-top:-30px; height: 220px;">
+                            <div class="card-image waves-effect waves-block waves-light" style=" margin-top:-30px; height: 350px;">
                                 <img class="activator" src='${imagenURL}'>
                             </div>
                             <div class="card-content center">
