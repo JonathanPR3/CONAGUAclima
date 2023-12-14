@@ -1,7 +1,28 @@
 nav ul a,
 nav .brand-logo {
   color: white;
+
 }
+
+@media only screen and (max-width: 600px) {
+  nav .brand-logo {
+    display: flex;
+    flex-direction: row; /* Cambia la dirección de la fila */
+    align-items: center;
+    text-align: center;
+  }
+
+  nav .brand-logo img {
+    max-width: 50px; /* Ajusta el tamaño máximo del logo */
+    margin-right: 10px; /* Ajusta el espacio entre el logo y el texto */
+  }
+
+  nav .brand-logo span {
+    font-size: 14px; /* Ajusta el tamaño del texto */
+  }
+}
+
+
 
 .col{font-size:20px;color:#404040}
 p {

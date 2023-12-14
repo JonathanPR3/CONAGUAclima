@@ -54,8 +54,7 @@ function formatearFecha(fechaString) {
 }
 
 // Función auxiliar para crear items por estado
-// Función auxiliar para crear items por estado
-// Función auxiliar para crear items por estado
+
 function crearItemsPorEstado(objClima, estado) {
     // Filtra los objetos por estado
     let objetosPorEstado = objClima.filter(obj => obj.nes === estado);
@@ -76,19 +75,24 @@ function crearItemsPorEstado(objClima, estado) {
 
             // Abre un nuevo div para el municipio actual
             itemsHTML += `<div class="card " >
-                            <h5 class="center" ><b>${obj.nmun}</b></h5>
+                            <h5 class="center" ><b>${obj.nmun}, ID: ${obj.idmun}</b></h5>
                             <div class="row">`;
             municipioAnterior = obj.nmun; // Actualiza el municipio anterior
         }
 
         // Estructura la información en 4 columnas por cada fecha
-        itemsHTML += `<div class="col s3" style="margin-left: 0px; margin-right: 0px;">
+        itemsHTML += `<div class="col s12 m6 l6 " style="margin-left: 0px; margin-right: 0px;">
                           <ul class="collection">
                               <li class="collection-item center blue accent-2 white-text"><b>${fechaFormateada}</b></li>
                               <li class="collection-item center grey lighten-4"><i style="color: red;" class="fa-solid fa-temperature-full"></i>Máxima: ${obj.tmax}°C</li>
                               <li class="collection-item center grey lighten-4"><i style="color: blue;" class="fa-solid fa-temperature-quarter"></i>Mínima: ${obj.tmin}°C</li>
-                              <li class="collection-item center grey lighten-4"><i class="fa-solid fa-cloud" style="color: #C6E5D9;"></i>${obj.desciel}</li>
-                              <li class="collection-item center grey lighten-4"><i class="fas fa-umbrella" style="color: #045071;"></i>Lluvia:<br> ${obj.probprec}%</li>
+                              <li class="collection-item center grey lighten-4"><i class="fa-solid fa-cloud" style="color: #C6E5D9;"></i>${obj.desciel}, cubierto al ${obj.cc}%</li>
+                              <li class="collection-item center grey lighten-4"><i class="fas fa-umbrella" style="color: #045071;"></i>Probabilidad de lluvia: ${obj.probprec}% <br> <i class="fa-solid fa-droplet" style="color: #045071;"></i>${obj.prec} l/m^2</li>
+                              <li class="collection-item center grey lighten-4"><i class="fa-solid fa-wind"></i>Velocidad del viento: ${obj.velvien} km/h</li>
+                              <li class="collection-item center grey lighten-4"><i class="fa-solid fa-compass"></i>Latitud:${obj.lat}%<br>
+                              <i class="fa-solid fa-compass"></i>Longitud:${obj.lon}</li>
+
+
                           </ul>
                       </div>`;
 
